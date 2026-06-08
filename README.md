@@ -1,6 +1,6 @@
-# Proyecto de Asignatura - Desarrollo Web - VERSIÓN COLORES VIVOS
+# Proyecto de Asignatura - Desarrollo de Aplicaciones Web
 
-Este repositorio contiene la estructura básica de una página web en HTML5 según los requerimientos de la actividad, mejorada con una paleta de colores vivos y estilos CSS internos.
+Este repositorio contiene la estructura básica de una página web en HTML5 según los requerimientos de la actividad, con diseño original.
 
 ## Contenido del repositorio
 - `index.html`: Archivo principal con la estructura de encabezados (H1, H2, H3) y estilos CSS internos para colores vivos.
