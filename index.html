@@ -3,60 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Web Asignatura - Colores Vivos</title>
+    <title>Proyecto Integrador - Desarrollo Web (Cybersecurity Edition)</title>
     <style>
+        :root {
+            /* Paleta de Colores Vivos Eléctricos para Ciberseguridad */
+            --cyan-neon: #00f0ff;
+            --azul-electrico: #0072ff;
+            --verde-matriz: #00ff66;
+            --texto-claro: #ffffff;
+            --texto-oscuro: #e0e6ed;
+        }
+
         body {
-            /* Background: a vibrant electric blue */
-            background-color: #007bff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: white; /* Base text color for contrast */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            line-height: 1.6;
             margin: 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Minor drop shadow for text contrast */
+            color: var(--texto-claro);
+            
+            /* Imagen de fondo fija de ciberseguridad */
+            background-image: url('https://www.excelsior.edu/wp-content/uploads/2025/02/cybersecurity-tools-image_blog.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
-        h1 {
-            /* Main title: a hot, vibrant orange */
-            color: #ff5722;
-            background-color: white; /* Contrast box */
-            padding: 15px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        /* Capa de superposición oscura para mejorar el contraste general */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 12, 26, 0.75); /* Filtro azul oscuro/negro profundo */
+            z-index: -1;
+        }
+
+        /* HEADER CON TOQUE DE LUZ */
+        header {
+            background: rgba(0, 114, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+            padding: 2.5rem;
             text-align: center;
         }
 
-        h2 {
-            /* Subtitle: a cheerful, bright lime green */
-            color: #ccff00;
-            margin-top: 20px;
-            text-align: center;
-            max-width: 80%;
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            color: var(--texto-claro);
+            text-shadow: 0 0 15px var(--azul-electrico), 0 0 5px var(--cyan-neon);
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        h3 {
-            /* Author name: a bright, vivid cyan/aqua */
-            color: #00ffff;
-            background-color: rgba(255,255,255,0.2); /* Semi-transparent background */
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin-top: 30px;
+        /* MENÚ DE NAVEGACIÓN ESTILO CRISTAL */
+        nav {
+            background: rgba(10, 20, 40, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: var(--texto-oscuro);
+            text-decoration: none;
+            padding: 1.2rem 2rem;
+            display: block;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #000;
+            background-color: var(--cyan-neon);
+            box-shadow: 0 0 20px var(--cyan-neon);
+        }
+
+        /* CONTENEDOR PRINCIPAL Y COLUMNAS */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2.5rem;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .content-area {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        /* EFECTO GLASSMORPHISM EN SECCIONES Y BARRA LATERAL */
+        section, aside {
+            background: rgba(10, 25, 50, 0.45); /* Fondo oscuro semitransparente */
+            backdrop-filter: blur(12px);         /* Desenfoque de fondo */
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 240, 255, 0.2); /* Borde brillante sutil */
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        aside {
+            flex: 1;
+            min-width: 280px;
+            height: fit-content;
+            border-left: 5px solid var(--cyan-neon);
+        }
+
+        h2, h3 {
+            color: var(--cyan-neon);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            margin-top: 0;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            color: var(--texto-oscuro);
+            font-size: 1.05rem;
+        }
+
+        /* LISTAS DE SERVICIOS */
+        ul.servicios-lista {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.servicios-lista li {
+            background: rgba(0, 114, 255, 0.1);
+            margin: 12px 0;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--verde-matriz);
+            color: var(--texto-claro);
+            transition: transform 0.2s ease;
+        }
+
+        ul.servicios-lista li:hover {
+            transform: translateX(5px);
+            background: rgba(0, 240, 255, 0.15);
+        }
+
+        /* ENLACES Y MULTIMEDIA */
+        .contacto-links a {
+            display: inline-block;
+            color: var(--cyan-neon);
+            font-weight: bold;
+            margin-right: 15px;
+            margin-top: 5px;
+            text-decoration: none;
+            border: 1px solid var(--cyan-neon);
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .contacto-links a:hover {
+            background: var(--cyan-neon);
+            color: #000;
+            box-shadow: 0 0 15px var(--cyan-neon);
+        }
+
+        .img-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+
+        iframe {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            margin-top: 1.5rem;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(5, 10, 20, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 2px solid rgba(0, 240, 255, 0.2);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+            color: #a0aec0;
         }
     </style>
 </head>
 <body>
 
-    <!-- Título Principal con el nombre del sistema - Vívido Naranja/Blanco -->
-    <h1>Sistema de Gestión de Ventas XYZ</h1>
+    <header>
+        <h1>Sistema de Gestión Web e Informática “Cibersegurity”</h1>
+    </header>
 
-    <!-- Subtítulo con el propósito del proyecto - Vívido Lima Green -->
-    <h2>Plataforma para administrar clientes, productos y facturación</h2>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <!-- Tercer encabezado con la autoría del estudiante - Vívido Cyan -->
-    <h3>Desarrollado por Javier Leonel</h3>
+    <main>
+        <div class="content-area">
+            
+            <section id="inicio">
+                <article>
+                    <h2>Inicio</h2>
+                    <p>Bienvenidos a la plataforma digital de <strong>Sistema de Gestión Web e Informática “Cibersegurity”</strong>, este proyecto es una propuesta tecnológica avanzada, diseñada para ofrecer soluciones de desarrollo web e informatica con un enfoque moderno, dinámico y robustecido bajo estrictos estándares de seguridad digital.</p>
+                </article>
+            </section>
+
+            <section id="quienes-somos">
+                <h2>Quiénes Somos</h2>
+                <p>
+                    Somos un equipo multidisciplinario enfocado a la transformación del mundo digital y al desarrollo de aplicaciones web seguras de alto impacto, nuestra misión principal es universalizar el acceso a tecnologías de vanguardia mediante el uso de estructuras sólidas en HTML5 y CSS3, permitiendo que cada emprendimiento o sistema institucional cuente con una identidad visual original y robusta en la red. Creemos firmemente que el diseño no es solo apariencia, sino la forma en que los usuarios interactúan y experimentan el contenido digital de manera intuitiva, eficiente y segura contra vulnerabilidades externas.
+                </p>
+                <p>
+                    Con 2 años de experiencia en la industria del software y la ingeniería de datos, hemos perfeccionado metodologías que priorizan la optimización de recursos, la accesibilidad y la resiliencia de los sistemas informáticos, es por ello, que en este proyecto integrador, demostramos cómo la aplicación correcta de etiquetas semánticas no solo mejora el SEO y la lectura para dispositivos de asistencia, sino que también organiza la información de manera lógica y limpia, sentando las bases idóneas para auditorías de código seguras y el crecimiento constante de cualquier organización en el ecosistema digital moderno.
+                </p>
+                <div class="img-container">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E12AQEQZNkapuJamQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1539094623644?e=2147483647&v=beta&t=cZT3g7r3Or5gzGMjV0XziFYaNbGNm2kERgYbx32JTNA">
+                </div>
+            </section>
+
+            <section id="servicios">
+                <h2>Servicios Especializados</h2>
+                <ul class="servicios-lista">
+                    <li>Diseño de interfaces de usuario (UI) con diseño original</li>
+                    <li>Desarrollo de sistemas web con arquitectura segura en HTML5</li>
+                    <li>Auditoría de código y mitigación de vulnerabilidades Web</li>
+                    <li>Optimización y adaptabilidad para dispositivos móviles (Viewport)</li>
+                    <li>Mantenimiento preventivo y soporte técnico institucional</li>
+                    <li>Ventas y soporte tecnico de servicios web y material informatico</li>
+                </ul>
+            </section>
+
+            <section id="contacto">
+                <h2>Contacto</h2>
+                <p>¿Tienes un sistema web o equipo informatico que proteger o desarrollar? ¡No dudes, buscanos ya!</p>
+                <div>
+                    <p><strong>Correo Electrónico:</strong> javierleonelz3a@gmail.com</p>
+                    <p><strong>Teléfono:</strong> +593 96 336 6693</p>
+                    <p><strong>Dirección:</strong> Av. 6 de diciembre entre manuela cañizares y mejia, Quito, Ecuador</p>
+                    <hr>
+                    <p><strong>Síguenos en nuestras redes:</strong></p>
+                    <div class="contacto-links">
+                        <a href="https://facebook.com" target="_blank">Facebook</a>
+                        <a href="https://twitter.com" target="_blank">X (Twitter)</a>
+                        <a href="https://instagram.com" target="_blank">Instagram</a>
+                    </div>
+                </div>
+                
+                <h3>Video Corporativo Relacionado</h3>
+                <iframe height="315" src="https://www.youtube.com/watch?v=MdcDJtO5qZ4" title="Video de actividad económica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+
+        </div>
+
+        <aside>
+            <h3>Alertas e Info</h3>
+            <p><strong>Campaña de Seguridad:</strong> Obtén un 25% de descuento en el análisis de vulnerabilidades OWASP para tu sitio web durante el periodo mundialista, vive la pasion del futbol con nosotros.</p>
+            <p><strong>Horarios de Atención:</strong><br>
+                Lunes a Viernes: 06:00 - 18:00<br>
+                Sábados: 08:00 - 14:00
+            </p>
+            <p><em>Próximo Webinar:</em> "Buenas prácticas e introducción al hacking ético en entornos HTML5" - Este lunes 15 de junio de 2026 a las 19:00.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Desarrollado por: Javier Leonel Santos Lemos</p>
+        <p>Asignatura: Desarrollo de Aplicaciones Web</p>
+        <p>Año: 2026</p>
+    </footer>
 
 </body>
 </html>
