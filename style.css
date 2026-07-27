@@ -1,5 +1,4 @@
 :root {
-    /* Paleta de Colores Vivos Eléctricos para Ciberseguridad */
     --cyan-neon: #00f0ff;
     --azul-electrico: #0072ff;
     --verde-matriz: #00ff66;
@@ -20,7 +19,6 @@ body {
     z-index: 1;
 }
 
-/* Capa de superposición oscura */
 body::before {
     content: "";
     position: fixed;
@@ -32,7 +30,6 @@ body::before {
     z-index: -1;
 }
 
-/* HEADER & EFECTOS DE LUZ */
 header {
     background: rgba(0, 114, 255, 0.12);
     backdrop-filter: blur(12px);
@@ -46,7 +43,6 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* NAVBAR GLASSMORPHISM COMPONENTE BOOTSTRAP */
 .navbar-custom {
     background: rgba(10, 20, 40, 0.75) !important;
     backdrop-filter: blur(10px);
@@ -78,7 +74,6 @@ header h1 {
     color: var(--cyan-neon);
 }
 
-/* CONTENEDORES CON EFECTO GLASSMORPHISM AVANZADO */
 .glass-panel {
     background: var(--fondo-card);
     backdrop-filter: blur(14px);
@@ -95,7 +90,6 @@ header h1 {
     border-color: rgba(0, 240, 255, 0.4);
 }
 
-/* BARRA LATERAL (ASIDE) ASIMÉTRICA */
 aside.glass-panel {
     border-left: 5px solid var(--cyan-neon);
 }
@@ -111,7 +105,6 @@ p {
     color: var(--texto-oscuro);
 }
 
-/* COMPONENTES DE LISTA */
 .list-group-custom .list-group-item {
     background: rgba(0, 114, 255, 0.08);
     color: var(--texto-claro);
@@ -129,7 +122,6 @@ p {
     color: #ffffff;
 }
 
-/* BOTONES NEON */
 .btn-neon {
     color: var(--cyan-neon);
     background: transparent;
@@ -145,7 +137,6 @@ p {
     box-shadow: 0 0 15px var(--cyan-neon);
 }
 
-/* Estilos para campos de formulario interactivos (is-invalid y is-valid de bootstrap customizado oscuro) */
 .form-control.is-invalid, .form-select.is-invalid {
     border-color: #dc3545 !important;
     background-image: none !important;
@@ -155,7 +146,6 @@ p {
     background-image: none !important;
 }
 
-/* FOOTER DE CONTROL */
 footer {
     background: rgba(4, 8, 16, 0.9);
     backdrop-filter: blur(10px);
