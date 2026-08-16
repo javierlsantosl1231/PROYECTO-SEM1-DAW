@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     // --- 4. Funciones Específicas de validación lógica ---
 
     function validarNombre() {
@@ -135,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
-
     // --- 5. Manejador del evento Submit Principal ---
 
     function manejarSubmit(evento) {
@@ -171,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarNotificacionGeneral('Error: Verifique que todos los campos del formulario estén correctos.', 'danger');
         }
     }
-
 
     // --- 6. Lógica de creación, gestión y eliminación de registros dinámicos ---
 
@@ -256,8 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (alerta.parentNode) alerta.remove();
         }, 3500);
     }
-// Se asegura de que el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', () => {
+
     // 1. Arreglo de objetos para renderizar el catálogo con botones para abrir el Modal
     const catalogoServicios = [
         {
